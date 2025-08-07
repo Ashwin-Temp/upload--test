@@ -991,7 +991,7 @@
       showStatus('Uploading questions...', 'info');
 
       try {
-        const res = await fetch('http://localhost:3000/upload-practice', {
+        const res = await fetch('https://upload-test-production.up.railway.app/upload-practice', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(practiceData)
@@ -1133,4 +1133,5 @@
     }, 1000);
   </script>
 </body>
+
 </html>
