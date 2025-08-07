@@ -169,7 +169,7 @@ document.getElementById('submitTest').onclick = async () => {
   statusMsg.textContent = 'Uploading...';
 
   try {
-    const res = await fetch('http://localhost:3000/upload-test', {
+    const res = await fetch('https://upload-test-production.up.railway.app/upload-test', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(testData)
@@ -219,7 +219,7 @@ window.addEventListener("DOMContentLoaded", () => {
     statusMsg.textContent = 'Uploading...';
 
     try {
-      const res = await fetch('http://localhost:3000/upload-test', {
+      const res = await fetch('https://upload-test-production.up.railway.app/upload-test', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(testData)
@@ -419,4 +419,5 @@ document.getElementById('resetBtn').onclick = () => {
     renderStepForm();
     statusMsg.textContent = '🔄 Form reset.';
   }
+
 };
