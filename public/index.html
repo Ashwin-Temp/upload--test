@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mock Test Uploader</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <aside id="sidebar">
+      <h2>Questions</h2>
+      <div id="questionList"></div>
+      <div class="sidebar-buttons">
+    <button id="pasteBtn">📋 Paste Questions</button>
+    <button id="submitTest">🚀 Submit Test</button>
+  </div>
+    </aside>
+
+    <main id="mainContent" style="height: 100vh;">
+      <div id="formArea">
+        <div id="stepForm"></div>
+
+        <div id="questionForm" style="display: none;">
+          <label>Question</label>
+          <textarea id="questionText" placeholder="Enter your question"></textarea>
+
+          <div class="option-group">
+            <input type="text" placeholder="Option 1" id="opt1" />
+            <input type="text" placeholder="Option 2" id="opt2" />
+            <input type="text" placeholder="Option 3" id="opt3" />
+            <input type="text" placeholder="Option 4" id="opt4" />
+          </div>
+
+          <label for="correctOption">Correct Option</label>
+          <select id="correctOption">
+            <option value="0">Option 1</option>
+            <option value="1">Option 2</option>
+            <option value="2">Option 3</option>
+            <option value="3">Option 4</option>
+          </select>
+
+          <div class="buttons">
+            <button id="nextBtn">Next</button>
+            <button id="stopBtn">Stop</button>
+          </div>
+        </div>
+      </div>
+      <p id="statusMsg"></p>
+    </main>
+  </div>
+
+  <!-- 🔽 Paste Modal -->
+  <div id="pasteModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h2>📥 Paste Questions</h2>
+      <p>Format: One question block like this:</p>
+      <pre>
+Question text?
+A. Option 1
+B. Option 2
+C. Option 3
+D. Option 4
+Answer: B
+      </pre>
+      <textarea id="bulkInput" placeholder="Paste multiple questions here..."></textarea>
+      <div class="buttons">
+        <button id="processPasteBtn">Process</button>
+        <button id="closeModalBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

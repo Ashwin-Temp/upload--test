@@ -1,0 +1,217 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font & Base */
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background-color: #0f0f0f;
+  color: #e5e7eb;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/* Sidebar */
+#sidebar {
+  width: 280px;
+  background: #1c1c1c;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ensure full height */
+}
+
+
+#sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #d4d4d4;
+}
+
+#questionList {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  background: #2a2a2a;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.card:hover {
+  background: #3b3b3b;
+}
+
+.sidebar-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.sidebar-buttons button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #9333ea;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+
+#submitTest {
+  margin-top: auto;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #9333ea;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#submitTest:hover {
+  background-color: #7e22ce;
+}
+
+/* Main Area */
+#mainContent {
+  flex-grow: 1;
+  padding: 40px;
+  overflow-y: auto;
+  background: #1a1a1a;
+  border-radius: 20px 0 0 20px;
+  margin: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+#formArea {
+  max-width: 700px;
+  margin: auto;
+}
+
+#stepForm label,
+#questionForm label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #e5e7eb;
+}
+
+#stepForm input,
+#questionForm input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  background: #2e2e2e;
+  color: #f3f4f6;
+}
+
+textarea {
+  resize: vertical;
+  height: 90px;
+}
+
+/* Option Inputs */
+.option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  background-color: #9333ea;
+  color: white;
+  border: none;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(147, 51, 234, 0.3);
+}
+
+button:hover {
+  background-color: #7e22ce;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Status Message */
+#statusMsg {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #c084fc;
+  text-align: center;
+}
+
+/* Paste Modal Style */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+}
+.modal-content textarea {
+  width: 100%;
+  height: 200px;
+  margin-top: 10px;
+  resize: vertical;
+}
+.modal-content .buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
