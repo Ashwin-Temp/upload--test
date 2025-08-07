@@ -844,8 +844,8 @@
           <p class="question-preview">${q.question.substring(0, 100)}${q.question.length > 100 ? '...' : ''}</p>
         `;
         
-        card.addEventListener('click', () => loadQuestion(index));
-        questionList.appendChild(card);
+         card.addEventListener('click', () => loadQuestion(index));
+      questionList.appendChild(card);
       });
       
       // Update status
@@ -855,25 +855,30 @@
 
     // Load question into form
     function loadQuestion(index) {
-      const q = practiceData.questions[index];
-      document.getElementById('questionText').value = q.question;
-      document.getElementById('opt1').value = q.options[0];
-      document.getElementById('opt2').value = q.options[1];
-      document.getElementById('opt3').value = q.options[2];
-      document.getElementById('opt4').value = q.options[3];
-      document.getElementById('correctOption').value = q.correctIndex;
-      document.getElementById('explanation').value = q.explanation || '';
-      editingIndex = index;
-      
-      // Show delete button
-      deleteBtn.style.display = 'block';
-      
-      // Highlight active card
-      document.querySelectorAll('.card').forEach(card => {
-        card.classList.remove('active');
-      });
-      document.querySelectorAll('.card')[index].classList.add('active');
+    const q = practiceData.questions[index];
+    document.getElementById('questionText').value = q.question;
+    document.getElementById('opt1').value = q.options[0];
+    document.getElementById('opt2').value = q.options[1];
+    document.getElementById('opt3').value = q.options[2];
+    document.getElementById('opt4').value = q.options[3];
+    document.getElementById('correctOption').value = q.correctIndex;
+    document.getElementById('explanation').value = q.explanation || '';
+    editingIndex = index;
+    
+    // Show delete button
+    deleteBtn.style.display = 'block';
+    
+    // Highlight active card
+    document.querySelectorAll('.card').forEach(card => {
+      card.classList.remove('active');
+    });
+    document.querySelectorAll('.card')[index].classList.add('active');
+    
+    // FIX: Scroll to form on mobile devices
+    if (window.innerWidth <= 992) {
+      document.getElementById('questionForm').scrollIntoView({ behavior: 'smooth' });
     }
+  }
 
     // Reset everything
     function resetAll() {
